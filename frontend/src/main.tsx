@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-
 import { RelayEnvironmentProvider, loadQuery } from 'react-relay/hooks';
-import RelayEnvironment from './RelayEnvironment';
+import relayEnvironment from './RelayEnvironment';
+import TaskViewQuery from './__generated__/TaskViewQuery.graphql'; // ✅ good path
 
-import TestComponentQuery from './__generated__/TestComponentQuery.graphql';
+
 
 // ✅ Preload the query
-const preloadedQuery = loadQuery(RelayEnvironment, TestComponentQuery, {});
+const preloadedQuery = loadQuery(relayEnvironment, TaskViewQuery, {});
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RelayEnvironmentProvider environment={RelayEnvironment}>
+    <RelayEnvironmentProvider environment={relayEnvironment}>
       <App preloadedQuery={preloadedQuery} />
     </RelayEnvironmentProvider>
   </React.StrictMode>

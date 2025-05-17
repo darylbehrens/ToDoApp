@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<32b9325e0e891b3b8cb2ba204e9fa4a8>>
+ * @generated SignedSource<<822847b5bd455416ed267069f30f41b7>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -9,17 +9,17 @@
 // @ts-nocheck
 
 import { ConcreteRequest, Query } from 'relay-runtime';
-export type TestComponentQuery$variables = {};
-export type TestComponentQuery$data = {
+export type TaskViewQuery$variables = {};
+export type TaskViewQuery$data = {
   readonly tasks: ReadonlyArray<{
     readonly id: number;
     readonly isCompleted: boolean;
     readonly title: string;
   }>;
 };
-export type TestComponentQuery = {
-  response: TestComponentQuery$data;
-  variables: TestComponentQuery$variables;
+export type TaskViewQuery = {
+  response: TaskViewQuery$data;
+  variables: TaskViewQuery$variables;
 };
 
 const node: ConcreteRequest = (function(){
@@ -62,7 +62,7 @@ return {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
-    "name": "TestComponentQuery",
+    "name": "TaskViewQuery",
     "selections": (v0/*: any*/),
     "type": "Query",
     "abstractKey": null
@@ -71,20 +71,20 @@ return {
   "operation": {
     "argumentDefinitions": [],
     "kind": "Operation",
-    "name": "TestComponentQuery",
+    "name": "TaskViewQuery",
     "selections": (v0/*: any*/)
   },
   "params": {
-    "cacheID": "a83f8fca17a2833d745c47aa34392b9d",
+    "cacheID": "8da78d64c46642094563dea0ff3a0d79",
     "id": null,
     "metadata": {},
-    "name": "TestComponentQuery",
+    "name": "TaskViewQuery",
     "operationKind": "query",
-    "text": "query TestComponentQuery {\n  tasks {\n    id\n    title\n    isCompleted\n  }\n}\n"
+    "text": "query TaskViewQuery {\n  tasks {\n    id\n    title\n    isCompleted\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "d5b4df53de77e20e6338f854fecdee40";
+(node as any).hash = "7e45b3726c6715cc03d29c515814e185";
 
 export default node;

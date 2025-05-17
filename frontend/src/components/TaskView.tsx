@@ -1,9 +1,8 @@
 import { graphql, usePreloadedQuery } from 'react-relay/hooks';
-import TestComponentQuery from '../__generated__/TestComponentQuery.graphql';
-
+import TaskViewQuery from '../__generated__/TaskViewQuery.graphql'; // ✅ go up one level
 
 const query = graphql`
-  query TestComponentQuery {
+  query TaskViewQuery {
     tasks {
       id
       title
@@ -12,8 +11,8 @@ const query = graphql`
   }
 `;
 
-export default function TestComponent({ preloadedQuery }: { preloadedQuery: any }) {
-  const data = usePreloadedQuery(TestComponentQuery, preloadedQuery);
+export default function TaskView({ preloadedQuery }: { preloadedQuery: any }) {
+  const data = usePreloadedQuery(TaskViewQuery, preloadedQuery);
 
   return (
     <div>

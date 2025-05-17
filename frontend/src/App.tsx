@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
-import TestComponent from './components/TestComponent';
+import TaskView from './components/TaskView';
 
 function App({ preloadedQuery }: { preloadedQuery: any }) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <TestComponent preloadedQuery={preloadedQuery} />
+      <TaskView preloadedQuery={preloadedQuery} />
     </Suspense>
   );
 }
