@@ -1,0 +1,17 @@
+type TaskItem {
+  id: Int!
+  title: String!
+  isCompleted: Boolean!
+}
+
+type Query {
+  tasks: [TaskItem!]!
+}
+
+input CreateTaskInput {
+  title: String!
+}
+
+type Mutation {
+  createTask(input: CreateTaskInput!): TaskItem!
+}

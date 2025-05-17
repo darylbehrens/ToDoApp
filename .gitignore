@@ -1,0 +1,17 @@
+# Node
+node_modules/
+dist/
+
+# .NET
+bin/
+obj/
+*.db
+
+# Relay
+src/__generated__/
+
+# Docker
+data/
+
+# VSCode
+.vscode/

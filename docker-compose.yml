@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ./data:/app/data  # 👈 Mount host ./data folder to /app/data in container
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app

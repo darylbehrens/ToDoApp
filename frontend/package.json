@@ -1,0 +1,28 @@
+{
+  "name": "todo-relay-app",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql --language typescript"
+  },
+  "dependencies": {
+    "@adobe/react-spectrum": "^3.29.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-relay": "^15.0.0",
+    "relay-runtime": "^15.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^4.4.1",
+    "babel-plugin-relay": "^15.0.0",
+    "relay-compiler": "^15.0.0",
+    "typescript": "^5.1.6",
+    "vite": "^5.0.0",
+    "vite-plugin-relay": "^2.1.0"
+  }
+}
