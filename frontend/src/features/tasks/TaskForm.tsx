@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button } from '@adobe/react-spectrum';
+import { TextField, Button, Flex } from '@adobe/react-spectrum';
 import { useCreateTask } from './CreateTaskMutation';
 
 const TaskForm = ({ onTaskCreated }) => {
@@ -24,22 +24,26 @@ const TaskForm = ({ onTaskCreated }) => {
   };
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleSubmit();
-      }}
-    >
+    <Flex direction="column" gap="size-200" width="size-3600">
       <TextField
         label="New Task"
         value={title}
         onChange={setTitle}
         isDisabled={isInFlight}
       />
-      <Button type="submit" variant="cta" isDisabled={isInFlight}>
+      <Button
+        variant="cta"
+        isDisabled={isInFlight || !title.trim()}
+        onPress={handleSubmit}
+        UNSAFE_style={{
+          backgroundColor: title.trim() ? 'red' : 'lightgray',
+          color: 'white',
+          height: '40px',
+        }}
+      >
         Add Task
       </Button>
-    </form>
+    </Flex>
   );
 };
 
