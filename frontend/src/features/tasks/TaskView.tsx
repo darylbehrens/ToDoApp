@@ -1,5 +1,5 @@
 import { graphql, usePreloadedQuery } from 'react-relay/hooks';
-import TaskViewQuery from '../__generated__/TaskViewQuery.graphql'; // ✅ go up one level
+import TaskViewQuery from '../../__generated__/TaskViewQuery.graphql'; // ✅ go up one level
 
 const query = graphql`
   query TaskViewQuery {

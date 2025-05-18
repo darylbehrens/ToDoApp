@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useLazyLoadQuery } from 'react-relay/hooks';
-import type { TasksListQuery } from './__generated__/TasksListQuery.graphql';
+import type { TasksListQuery } from '../../__generated__/TasksListQuery.graphql';
 
 const TasksList = () => {
   const data = useLazyLoadQuery<TasksListQuery>(

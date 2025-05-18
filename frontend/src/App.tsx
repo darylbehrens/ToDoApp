@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import TaskView from './components/TaskView';
+import TaskView from './features/tasks/TaskView';
 
 function App({ preloadedQuery }: { preloadedQuery: any }) {
   return (
