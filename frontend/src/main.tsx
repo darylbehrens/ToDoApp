@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { RelayEnvironmentProvider, loadQuery } from 'react-relay/hooks';
-import relayEnvironment from './RelayEnvironment';
+import relayEnvironment from './relay/RelayEnvironment';
 import TaskViewQuery from './__generated__/TaskViewQuery.graphql'; // ✅ good path
 
 
