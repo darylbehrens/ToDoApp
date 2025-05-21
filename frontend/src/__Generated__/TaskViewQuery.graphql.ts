@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<822847b5bd455416ed267069f30f41b7>>
+ * @generated SignedSource<<cb5619f81160393fa6433aadafaaca3a>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -12,7 +12,7 @@ import { ConcreteRequest, Query } from 'relay-runtime';
 export type TaskViewQuery$variables = {};
 export type TaskViewQuery$data = {
   readonly tasks: ReadonlyArray<{
-    readonly id: number;
+    readonly id: string;
     readonly isCompleted: boolean;
     readonly title: string;
   }>;

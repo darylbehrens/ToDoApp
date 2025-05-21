@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<21b04770283d538c4a28918e20b773de>>
+ * @generated SignedSource<<43c4e1267781b5955eeb6b2305e6b12c>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -9,22 +9,22 @@
 // @ts-nocheck
 
 import { ConcreteRequest, Mutation } from 'relay-runtime';
-export type CreateTaskInput = {
-  title: string;
+export type UpdateTaskInput = {
+  id: number;
+  isCompleted: boolean;
 };
-export type CreateTaskMutation$variables = {
-  input: CreateTaskInput;
+export type UpdateTaskMutation$variables = {
+  input: UpdateTaskInput;
 };
-export type CreateTaskMutation$data = {
-  readonly createTask: {
+export type UpdateTaskMutation$data = {
+  readonly updateTaskStatus: {
     readonly id: string;
     readonly isCompleted: boolean;
-    readonly title: string;
   };
 };
-export type CreateTaskMutation = {
-  response: CreateTaskMutation$data;
-  variables: CreateTaskMutation$variables;
+export type UpdateTaskMutation = {
+  response: UpdateTaskMutation$data;
+  variables: UpdateTaskMutation$variables;
 };
 
 const node: ConcreteRequest = (function(){
@@ -47,7 +47,7 @@ v1 = [
     ],
     "concreteType": "TaskItem",
     "kind": "LinkedField",
-    "name": "createTask",
+    "name": "updateTaskStatus",
     "plural": false,
     "selections": [
       {
@@ -55,13 +55,6 @@ v1 = [
         "args": null,
         "kind": "ScalarField",
         "name": "id",
-        "storageKey": null
-      },
-      {
-        "alias": null,
-        "args": null,
-        "kind": "ScalarField",
-        "name": "title",
         "storageKey": null
       },
       {
@@ -80,7 +73,7 @@ return {
     "argumentDefinitions": (v0/*: any*/),
     "kind": "Fragment",
     "metadata": null,
-    "name": "CreateTaskMutation",
+    "name": "UpdateTaskMutation",
     "selections": (v1/*: any*/),
     "type": "Mutation",
     "abstractKey": null
@@ -89,20 +82,20 @@ return {
   "operation": {
     "argumentDefinitions": (v0/*: any*/),
     "kind": "Operation",
-    "name": "CreateTaskMutation",
+    "name": "UpdateTaskMutation",
     "selections": (v1/*: any*/)
   },
   "params": {
-    "cacheID": "2816d4e23a834b446b72484165c555be",
+    "cacheID": "294cf83c88b24089224351d4be102235",
     "id": null,
     "metadata": {},
-    "name": "CreateTaskMutation",
+    "name": "UpdateTaskMutation",
     "operationKind": "mutation",
-    "text": "mutation CreateTaskMutation(\n  $input: CreateTaskInput!\n) {\n  createTask(input: $input) {\n    id\n    title\n    isCompleted\n  }\n}\n"
+    "text": "mutation UpdateTaskMutation(\n  $input: UpdateTaskInput!\n) {\n  updateTaskStatus(input: $input) {\n    id\n    isCompleted\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "f3c29e4f33315593a0a08d83453fce5d";
+(node as any).hash = "f81eba652ef7e141d60cf83329a537b0";
 
 export default node;

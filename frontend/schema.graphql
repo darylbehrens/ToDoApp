@@ -1,3 +1,28 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+}
+
+type DeleteTaskPayload {
+  deletedTaskId: Int!
+}
+
+type Mutation {
+  createTask(input: CreateTaskInput!): TaskItem!
+  deleteTask(input: DeleteTaskInput!): DeleteTaskPayload!
+  updateTaskStatus(input: UpdateTaskInput!): TaskItem!
+}
+
+type Query {
+  tasks(where: TaskItemFilterInput order: [TaskItemSortInput!]): [TaskItem!]!
+}
+
+type TaskItem {
+  id: ID!
+  title: String!
+  isCompleted: Boolean!
+}
+
 input BooleanOperationFilterInput {
   eq: Boolean
   neq: Boolean
@@ -7,32 +32,15 @@ input CreateTaskInput {
   title: String!
 }
 
-input IntOperationFilterInput {
-  eq: Int
-  neq: Int
-  in: [Int]
-  nin: [Int]
-  gt: Int
-  ngt: Int
-  gte: Int
-  ngte: Int
-  lt: Int
-  nlt: Int
-  lte: Int
-  nlte: Int
+input DeleteTaskInput {
+  id: Int!
 }
 
-type Mutation {
-  createTask(input: CreateTaskInput!): TaskItem!
-}
-
-type Query {
-  tasks(where: TaskItemFilterInput, order: [TaskItemSortInput!]): [TaskItem!]!
-}
-
-enum SortEnumType {
-  ASC
-  DESC
+input IdOperationFilterInput {
+  eq: ID
+  neq: ID
+  in: [ID]
+  nin: [ID]
 }
 
 input StringOperationFilterInput {
@@ -50,16 +58,10 @@ input StringOperationFilterInput {
   nendsWith: String
 }
 
-type TaskItem {
-  id: Int!
-  title: String!
-  isCompleted: Boolean!
-}
-
 input TaskItemFilterInput {
   and: [TaskItemFilterInput!]
   or: [TaskItemFilterInput!]
-  id: IntOperationFilterInput
+  id: IdOperationFilterInput
   title: StringOperationFilterInput
   isCompleted: BooleanOperationFilterInput
 }
@@ -70,3 +72,14 @@ input TaskItemSortInput {
   isCompleted: SortEnumType
 }
 
+input UpdateTaskInput {
+  id: Int!
+  isCompleted: Boolean!
+}
+
+enum SortEnumType {
+  ASC
+  DESC
+}
+
+directive @tag(name: String!) repeatable on SCHEMA | SCALAR | OBJECT | FIELD_DEFINITION | ARGUMENT_DEFINITION | INTERFACE | UNION | ENUM | ENUM_VALUE | INPUT_OBJECT | INPUT_FIELD_DEFINITION

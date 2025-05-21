@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { TextField, Button, Flex } from '@adobe/react-spectrum';
 import { useCreateTask } from './CreateTaskMutation';
 
 const TaskForm = ({ onTaskCreated }) => {
@@ -10,9 +9,7 @@ const TaskForm = ({ onTaskCreated }) => {
     if (!title.trim()) return;
 
     commit({
-      variables: {
-        input: { title },
-      },
+      variables: { input: { title } },
       onCompleted: () => {
         setTitle('');
         if (onTaskCreated) onTaskCreated();
@@ -24,26 +21,33 @@ const TaskForm = ({ onTaskCreated }) => {
   };
 
   return (
-    <Flex direction="column" gap="size-200" width="size-3600">
-      <TextField
-        label="New Task"
+    <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', background: 'pink' }}>
+      <input
+        type="text"
+        placeholder="New Task"
         value={title}
-        onChange={setTitle}
-        isDisabled={isInFlight}
+        onChange={(e) => setTitle(e.target.value)}
+        disabled={isInFlight}
+        style={{
+          flex: 1,
+          padding: '0.5rem',
+          fontSize: '1rem'
+        }}
       />
-      <Button
-        variant="cta"
-        isDisabled={isInFlight || !title.trim()}
-        onPress={handleSubmit}
-        UNSAFE_style={{
-          backgroundColor: title.trim() ? 'red' : 'lightgray',
-          color: 'white',
-          height: '40px',
+      <button
+        disabled={isInFlight || !title.trim()}
+        onClick={handleSubmit}
+        style={{
+          padding: '0.5rem 1rem',
+          fontSize: '1rem',
+          cursor: 'pointer',
+          backgroundColor: 'green',
+          color: 'white'
         }}
       >
         Add Task
-      </Button>
-    </Flex>
+      </button>
+    </div>
   );
 };
 
